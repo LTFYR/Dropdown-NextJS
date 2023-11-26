@@ -19,6 +19,7 @@
 .bodyContent h2 {
   font-size: 60px;
   margin: 0;
+  z-index: -1;
 }
 
 .menu-wrapper {
@@ -75,6 +76,14 @@
 .mega-menu ul li:hover > .title::after {
   width: 100%;
   height: 4px;
+}
+
+.test {
+  position: absolute;
+  top: -10px;
+  background-color: transparent;
+  width: 100%;
+  left: 0;
 }
 
 .menu-wrapper .submenu-wrapper {
@@ -144,58 +153,36 @@
   background-color: red;
 }
 
-/* 3d efekt ucun*/
-/* .menu-wrapper .mega-menu .submenuParent:hover .submenu-wrapper {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-  
-    .mega-menu .submenu-wrapper {
-      opacity: 0;
-      pointer-events: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      transform: translateY(-20px);
-      transition: all 0.5s ease-in-out;
-    }
-  
-    .mega-menu .submenuParent:hover .submenu-wrapper {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(20px);
-    } */
+.active {
+  background-color: red;
+}
 
-/* .menu-wrapper .submenu-wrapper {
-    opacity: 0;
-    position: absolute;
-    pointer-events: none;
-    left: 0;
-    top: 40px;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transition: all 500ms ease;
-  }
-  
-  .menu-wrapper .submenuParent:hover .submenu-wrapper {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0) rotateX(0deg);
-  }
-  
-  .submenu {
-    background-color: white;
-    padding: 16px 24px;
-    position: relative;
-    border-radius: 12px;
-    margin-top: 12px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transform: rotateX(40deg);
-    transform-origin: top;
-    transition: transform 1000ms ease;
-  }
-  
-  .menu-wrapper .submenuParent:hover .submenu-wrapper .submenu {
-    transform: rotateX(0deg);
-  } */
+/* 3d efekt ucun*/
+
+.menu-wrapper .sub {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 500ms ease;
+}
+
+.menu-wrapper .submenuParent:hover .sub {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) rotateX(0deg);
+}
+
+.sub .submenu {
+  background-color: white;
+  padding: 16px 24px;
+  position: relative;
+  border-radius: 12px;
+  margin-top: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: rotateX(40deg);
+  transform-origin: top;
+  transition: transform 1000ms ease;
+}
+
+.menu-wrapper .submenuParent:hover .sub .submenu {
+  transform: rotateX(0deg);
+}
