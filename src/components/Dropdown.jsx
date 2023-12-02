@@ -28,12 +28,14 @@ const Dropdown = () => {
                 <a href="#" class="title">
                   {data.name}
                 </a>
-                <div
-                  class={
-                    data.id === 2 ? "submenu-wrapper sub" : "submenu-wrapper"
-                  }
-                >
-                  <Submenu />
+                <div className="test">
+                  <div
+                    class={
+                      data.id === 2 ? "submenu-wrapper sub" : "submenu-wrapper"
+                    }
+                  >
+                    <Submenu />
+                  </div>
                 </div>
               </li>
             ))}
